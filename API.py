@@ -156,8 +156,8 @@ def sendArea():
 def sendWithinArea():
     area = hd.get_geofence_area() #(min,max)
     patientLocation = hd.get_current_location()
-    Distance1 = hs.haversine(area[0],patientLocation,unit=Unit.METERS) #Using min longitude and latitude
-    Distance2 = hs.haversine(area[1],patientLocation,unit=Unit.METERS) #Using max longitude and latitude
+    Distance1 = hs.haversine(area[0],patientLocation,unit=Unit.METERS) #Using minimum longitude and latitude
+    Distance2 = hs.haversine(area[1],patientLocation,unit=Unit.METERS) #Using maximum longitude and latitude
     MedianDistance = (((Distance1 + Distance2)/2)-500) 
     within = hd.is_location_within_geofence(patientLocation)
     if (within == False):
